@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    /* Add CSS styles for centering the table and showing table lines */
+    .content {
+        text-align: center; /* Center the content horizontally */
+    }
+
+    table {
+        margin: 0 auto; /* Center the table horizontally */
+        border-collapse: collapse; /* Collapse table borders */
+        width: 80%; /* Adjust the width as needed */
+    }
+
+    th, td {
+        border: 1px solid #ccc; /* Add borders to table cells */
+        padding: 8px; /* Add padding to table cells for spacing */
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Update Task</h1>
+
+
+
+    <!-- Corrected the 'action' attribute -->
+    <form action="/update/{{task.id}}" method="POST">
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <input type="submit" value="Update">
+    </form>
+
+</div>
+
+{% endblock %}
+
